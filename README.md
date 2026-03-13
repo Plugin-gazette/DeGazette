@@ -3,7 +3,7 @@
 Wekelijks performantierapport voor pluginbatterij.com
 
 ## Live URL
-`https://JOUW-GEBRUIKERSNAAM.github.io/plugin-gazette/`
+`https://plug-ingazette.github.io/plugin-gazette/`
 
 ## Structuur
 ```
