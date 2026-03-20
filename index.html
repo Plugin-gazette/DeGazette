@@ -3,34 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>De Plugin Gazette – 13 maart 2026</title>
+<title>De Plugin Gazette – 20 maart 2026</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&display=swap');
   * { margin:0; padding:0; box-sizing:border-box; }
   body { background:#f0f0eb; font-family:'DM Sans',sans-serif; color:#1a1a1a; padding:40px 20px; }
   .wrapper { max-width:720px; margin:0 auto; background:#fff; border-radius:4px; overflow:hidden; box-shadow:0 2px 40px rgba(0,0,0,.08); }
   .divider { height:3px; background:linear-gradient(90deg,#c8f135,#7c3aed,#06b6d4); }
-
   .header { background:#1a1a1a; padding:36px 48px 32px; }
   .header-top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px; }
   .gazette-name { font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#c8f135; }
   .header-badge { background:#c8f135; color:#1a1a1a; font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; padding:5px 12px; border-radius:2px; }
   .header h1 { font-size:30px; font-weight:700; color:#fff; letter-spacing:-0.5px; margin-bottom:4px; }
   .header-sub { font-size:12px; color:#666; font-family:'DM Mono',monospace; }
-
   .section { padding:36px 48px; border-bottom:1px solid #f0f0eb; }
   .section:last-child { border-bottom:none; }
   .section-label { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#aaa; margin-bottom:16px; }
   .section-title { font-size:18px; font-weight:700; color:#1a1a1a; margin-bottom:4px; letter-spacing:-0.3px; }
   .section-sub { font-size:12px; color:#888; margin-bottom:24px; }
-
   .kpi-row { display:flex; gap:12px; margin-bottom:28px; }
   .kpi { flex:1; background:#f7f7f4; border-radius:4px; padding:18px; border-left:3px solid #c8f135; }
+  .kpi.down-kpi { border-left-color:#ef4444; }
   .kpi-value { font-size:24px; font-weight:700; color:#1a1a1a; letter-spacing:-0.8px; font-family:'DM Mono',monospace; }
   .kpi-label { font-size:10px; color:#888; margin-top:4px; text-transform:uppercase; letter-spacing:1px; }
   .kpi-delta { font-size:12px; font-weight:600; margin-top:6px; font-family:'DM Mono',monospace; }
   .up { color:#22c55e; } .down { color:#ef4444; } .neu { color:#aaa; }
-
   .chart-wrap { background:#f7f7f4; border-radius:4px; padding:24px 20px 16px; }
   .chart-note { font-size:10px; color:#aaa; margin-bottom:16px; font-style:italic; }
   .bar-chart { display:flex; align-items:flex-end; gap:16px; height:160px; padding:0 8px; }
@@ -42,7 +39,6 @@
   .bar-label { margin-top:8px; font-size:11px; color:#888; text-align:center; line-height:1.3; }
   .bar-omzet { font-size:10px; color:#aaa; font-family:'DM Mono',monospace; margin-top:3px; text-align:center; }
   .chart-baseline { border-top:1px solid #e0e0d8; margin:0 8px; }
-
   .product-row { display:flex; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid #f0f0eb; }
   .product-row:last-child { border-bottom:none; }
   .product-name { font-size:13px; font-weight:500; color:#1a1a1a; flex:1; }
@@ -56,7 +52,6 @@
   .kwh-total-label { font-size:13px; font-weight:600; }
   .kwh-total-val { font-family:'DM Mono',monospace; font-size:20px; font-weight:700; color:#1a1a1a; }
   .kwh-total-sub { font-size:10px; color:#888; margin-top:2px; }
-
   .camp-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
   .camp-card { background:#f7f7f4; border-radius:4px; padding:16px; }
   .camp-card.star { border-left:3px solid #c8f135; }
@@ -65,7 +60,6 @@
   .camp-row:last-child { margin-bottom:0; }
   .camp-key { color:#888; }
   .camp-val { font-family:'DM Mono',monospace; font-weight:600; }
-
   .meta-row { display:flex; align-items:center; gap:14px; padding:12px 0; border-bottom:1px solid #f0f0eb; }
   .meta-row:last-child { border-bottom:none; }
   .meta-num { font-size:11px; font-weight:700; color:#ccc; width:18px; flex-shrink:0; }
@@ -77,12 +71,10 @@
   .meta-sv { text-align:right; }
   .meta-sv-val { font-family:'DM Mono',monospace; font-size:13px; font-weight:600; }
   .meta-sv-key { font-size:10px; color:#aaa; text-transform:uppercase; letter-spacing:0.8px; }
-
   .alert { padding:14px 18px; border-radius:4px; font-size:12px; margin-top:12px; line-height:1.6; }
   .alert-warn { background:#fffbeb; border-left:3px solid #f59e0b; color:#92400e; }
   .alert-info { background:#f7f7f4; border-left:3px solid #aaa; color:#666; }
-
-  /* CONCLUSIONS */
+  .alert-good { background:#f0fdf4; border-left:3px solid #22c55e; color:#166534; }
   .conclusion-row { display:flex; gap:12px; margin-bottom:12px; }
   .conclusion-row:last-child { margin-bottom:0; }
   .conclusion-icon { font-size:16px; flex-shrink:0; margin-top:1px; }
@@ -94,7 +86,6 @@
   .conclusion-group-label.green { color:#22c55e; }
   .conclusion-group-label.orange { color:#f59e0b; }
   .conclusion-group-label.red { color:#ef4444; }
-
   .footer { background:#1a1a1a; padding:24px 48px; text-align:center; }
   .footer p { font-size:11px; color:#555; line-height:1.8; }
   .footer strong { color:#888; }
@@ -107,277 +98,304 @@
   <div class="header">
     <div class="header-top">
       <div class="gazette-name">De Plugin Gazette</div>
-      <div class="header-badge">Wk 11 · 2026</div>
+      <div class="header-badge">Wk 12 · 2026</div>
     </div>
     <h1>Weekrapport</h1>
-    <div class="header-sub">Zat 7 mrt – vrij 13 mrt 2026 &nbsp;·&nbsp; Gegenereerd 13/03 om 16:45</div>
+    <div class="header-sub">Zat 14 mrt – vrij 20 mrt 2026 &nbsp;·&nbsp; Gegenereerd 20/03 om 16:30</div>
   </div>
 
   <!-- BESTELLINGEN -->
   <div class="section">
     <div class="section-label">Shopify — Bestellingen</div>
     <div class="section-title">Bestellingen & omzet</div>
-    <div class="section-sub">Week loopt van <strong>zaterdag t/m vrijdag</strong>. Vergelijking met vorige week (zat 28 feb – vrij 6 mrt).</div>
-
+    <div class="section-sub">Week loopt van <strong>zaterdag t/m vrijdag</strong>. Vergelijking met vorige week (zat 7 mrt – vrij 13 mrt).</div>
     <div class="kpi-row">
-      <div class="kpi">
-        <div class="kpi-value">20</div>
+      <div class="kpi down-kpi">
+        <div class="kpi-value">15</div>
         <div class="kpi-label">Bestellingen</div>
-        <div class="kpi-delta up">↑ +67% vs. vorige week (12)</div>
+        <div class="kpi-delta down">↓ -25% vs. vorige week (20)</div>
       </div>
-      <div class="kpi">
-        <div class="kpi-value">€20.606</div>
+      <div class="kpi down-kpi">
+        <div class="kpi-value">€18.293</div>
         <div class="kpi-label">Omzet</div>
-        <div class="kpi-delta up">↑ +94% vs. vorige week (€10.643)</div>
+        <div class="kpi-delta down">↓ -11% vs. vorige week (€20.606)</div>
       </div>
       <div class="kpi">
-        <div class="kpi-value">€1.030</div>
+        <div class="kpi-value">€1.220</div>
         <div class="kpi-label">Gem. bestelwaarde</div>
-        <div class="kpi-delta up">↑ +16% vs. vorige week (€887)</div>
+        <div class="kpi-delta up">↑ +18% vs. vorige week (€1.030)</div>
       </div>
     </div>
-
     <div class="chart-wrap">
-      <div class="chart-note">Weken starten op zaterdag. Huidige week loopt t/m vandaag (vr 13 mrt).</div>
-      <div class="bar-chart">
-        <div class="bar-col">
-          <div class="bar-val">2</div>
-          <div class="bar past" style="height:11%"></div>
-          <div class="bar-label">16 feb</div>
-          <div class="bar-omzet">€2.370</div>
-        </div>
-        <div class="bar-col">
-          <div class="bar-val">8</div>
-          <div class="bar past" style="height:42%"></div>
-          <div class="bar-label">23 feb</div>
-          <div class="bar-omzet">€9.836</div>
-        </div>
-        <div class="bar-col">
-          <div class="bar-val">12</div>
-          <div class="bar past" style="height:63%"></div>
-          <div class="bar-label">1 mrt</div>
-          <div class="bar-omzet">€10.643</div>
-        </div>
-        <div class="bar-col">
-          <div class="bar-val">20</div>
-          <div class="bar current" style="height:100%"></div>
-          <div class="bar-label"><strong>7 mrt ←</strong></div>
-          <div class="bar-omzet" style="color:#7c3aed;font-weight:600">€20.606</div>
-        </div>
-      </div>
+      <div class="chart-note">Weken starten op zaterdag. Huidige week loopt t/m vandaag (vrij 20 mrt).</div>
+        <div id="bar-chart-wrap" style="display:flex;gap:16px;padding:0 8px;align-items:flex-end;"></div>
       <div class="chart-baseline"></div>
     </div>
+    <script>
+      (function() {
+        var data = [
+          { val: 8,  label: '22 feb',    omzet: '€9.836',  current: false },
+          { val: 14, label: '1 mrt',     omzet: '€12.518', current: false },
+          { val: 20, label: '7 mrt',     omzet: '€20.606', current: false },
+          { val: 15, label: '14 mrt ←',  omzet: '€18.293', current: true }
+        ];
+        var CHART_H = 140;
+        var maxVal = Math.max.apply(null, data.map(function(d){ return d.val; }));
+        var wrap = document.getElementById('bar-chart-wrap');
+        data.forEach(function(d) {
+          var barH = Math.round((d.val / maxVal) * CHART_H);
+          var col = document.createElement('div');
+          col.style.cssText = 'flex:1;display:flex;flex-direction:column;align-items:center;';
+
+          // value label above bar
+          var valDiv = document.createElement('div');
+          valDiv.style.cssText = 'font-family:"DM Mono",monospace;font-size:13px;font-weight:700;margin-bottom:5px;color:#1a1a1a;';
+          valDiv.textContent = d.val;
+
+          // spacer pushes bar to bottom
+          var spacer = document.createElement('div');
+          spacer.style.cssText = 'flex:1;';
+
+          // the bar itself — explicit pixel height
+          var bar = document.createElement('div');
+          bar.style.cssText = 'width:100%;border-radius:3px 3px 0 0;height:' + barH + 'px;background:' + (d.current ? '#c8f135' : '#d4d4cc') + ';flex-shrink:0;';
+
+          // label below
+          var lbl = document.createElement('div');
+          lbl.style.cssText = 'margin-top:8px;font-size:11px;color:#888;text-align:center;line-height:1.3;white-space:nowrap;';
+          lbl.innerHTML = d.current ? '<strong>' + d.label + '</strong>' : d.label;
+
+          // revenue
+          var omz = document.createElement('div');
+          omz.style.cssText = 'font-size:10px;font-family:"DM Mono",monospace;margin-top:3px;text-align:center;' + (d.current ? 'color:#7c3aed;font-weight:600;' : 'color:#aaa;');
+          omz.textContent = d.omzet;
+
+          col.appendChild(valDiv);
+          col.appendChild(spacer);
+          col.appendChild(bar);
+          col.appendChild(lbl);
+          col.appendChild(omz);
+          wrap.appendChild(col);
+        });
+        // set wrap height = CHART_H + space for labels
+        wrap.style.height = (CHART_H + 60) + 'px';
+      })();
+    </script>
   </div>
 
-  <!-- PRODUCTEN DEZE WEEK -->
+  <!-- PRODUCTEN -->
   <div class="section">
-    <div class="section-label">Shopify — Producten (zat 7 mrt – vrij 13 mrt)</div>
+    <div class="section-label">Shopify — Producten (zat 14 mrt – vrij 20 mrt)</div>
     <div class="section-title">Verkochte opslagcapaciteit</div>
     <div class="section-sub">Enkel batterijproducten. Bruto verkopen (excl. retouren). Omgerekend naar veelvouden van 2,5 kWh.</div>
-
-    <!-- max = Marstek V2: 61,44 kWh = 100% -->
     <div class="product-row">
       <div class="product-name">
         Marstek Venus E 5,12kWh V2
-        <span class="product-mult">2,048 × 2,5 kWh &nbsp;·&nbsp; 2 retouren</span>
+        <span class="product-mult">2,048 × 2,5 kWh</span>
       </div>
       <div class="product-bar-wrap"><div class="product-bar" style="width:100%"></div></div>
-      <div class="product-qty">12×</div>
-      <div class="product-kwh">61,4 kWh</div>
-      <div class="product-delta neu">= vw</div>
-    </div>
-    <div class="product-row">
-      <div class="product-name">
-        Marstek Venus E 10,24kWh V2
-        <span class="product-mult">4,096 × 2,5 kWh &nbsp;·&nbsp; 1 retour</span>
-      </div>
-      <div class="product-bar-wrap"><div class="product-bar" style="width:33%"></div></div>
-      <div class="product-qty">2×</div>
-      <div class="product-kwh">20,5 kWh</div>
-      <div class="product-delta up">nieuw</div>
+      <div class="product-qty">9×</div>
+      <div class="product-kwh">46,1 kWh</div>
+      <div class="product-delta down">-3×</div>
     </div>
     <div class="product-row">
       <div class="product-name">
         Marstek Venus E 5,12kWh V3
         <span class="product-mult">2,048 × 2,5 kWh</span>
       </div>
-      <div class="product-bar-wrap"><div class="product-bar" style="width:25%"></div></div>
-      <div class="product-qty">3×</div>
-      <div class="product-kwh">15,4 kWh</div>
-      <div class="product-delta up">nieuw</div>
+      <div class="product-bar-wrap"><div class="product-bar" style="width:67%"></div></div>
+      <div class="product-qty">6×</div>
+      <div class="product-kwh">30,7 kWh</div>
+      <div class="product-delta up">+3×</div>
     </div>
     <div class="product-row">
       <div class="product-name">
-        Anker Solix Solarbank Ext. 3 2,7kWh
-        <span class="product-mult">1,080 × 2,5 kWh</span>
+        Marstek Venus E 10,24kWh V2
+        <span class="product-mult">4,096 × 2,5 kWh</span>
+      </div>
+      <div class="product-bar-wrap"><div class="product-bar" style="width:22%"></div></div>
+      <div class="product-qty">1×</div>
+      <div class="product-kwh">10,2 kWh</div>
+      <div class="product-delta down">-1×</div>
+    </div>
+    <div class="product-row">
+      <div class="product-name">
+        Plugsie Extension Battery 2,1kWh
+        <span class="product-mult">0,840 × 2,5 kWh &nbsp;·&nbsp; nieuw in assortiment</span>
       </div>
       <div class="product-bar-wrap"><div class="product-bar" style="width:9%"></div></div>
       <div class="product-qty">2×</div>
-      <div class="product-kwh">5,4 kWh</div>
+      <div class="product-kwh">4,2 kWh</div>
       <div class="product-delta up">nieuw</div>
     </div>
     <div class="product-row">
       <div class="product-name">
-        Anker Solix Solarbank 3 2,7kWh + P1
-        <span class="product-mult">1,080 × 2,5 kWh</span>
+        Plugsie Battery 2,1kWh
+        <span class="product-mult">0,840 × 2,5 kWh &nbsp;·&nbsp; nieuw in assortiment</span>
       </div>
-      <div class="product-bar-wrap"><div class="product-bar" style="width:4%"></div></div>
+      <div class="product-bar-wrap"><div class="product-bar" style="width:5%"></div></div>
       <div class="product-qty">1×</div>
-      <div class="product-kwh">2,7 kWh</div>
+      <div class="product-kwh">2,1 kWh</div>
       <div class="product-delta up">nieuw</div>
     </div>
-
     <div class="kwh-total-row">
       <div>
         <div class="kwh-total-label">Totale verkochte capaciteit deze week</div>
-        <div class="kwh-total-sub">Bruto: 105,4 kWh &nbsp;·&nbsp; Netto (excl. retouren): 84,9 kWh &nbsp;·&nbsp; = 42,2 × 2,5 kWh</div>
+        <div class="kwh-total-sub">Bruto: 93,3 kWh &nbsp;·&nbsp; = 37,3 × 2,5 kWh &nbsp;·&nbsp; vs. vorige week: 105,4 kWh (−11%)</div>
       </div>
-      <div class="kwh-total-val">105,4 kWh</div>
+      <div class="kwh-total-val">93,3 kWh</div>
     </div>
   </div>
 
   <!-- GOOGLE ADS -->
   <div class="section">
-    <div class="section-label">Google Ads — Zat 7 mrt – vrij 13 mrt</div>
+    <div class="section-label">Google Ads — Zat 14 mrt – vrij 20 mrt</div>
     <div class="section-title">Campagne samenvatting</div>
-    <div class="section-sub">Totaal spend: <strong>€391</strong>. Enkel actieve campagnes.</div>
-
+    <div class="section-sub">Totaal spend: <strong>€499</strong> (+28% vs. vorige week €391). Enkel actieve campagnes.</div>
     <div class="camp-grid">
       <div class="camp-card star">
         <div class="camp-name">VL – Shopping – Verkoop</div>
-        <div class="camp-row"><span class="camp-key">Spend</span><span class="camp-val">€150</span></div>
-        <div class="camp-row"><span class="camp-key">Clicks</span><span class="camp-val">831</span></div>
-        <div class="camp-row"><span class="camp-key">Conv. waarde</span><span class="camp-val neu">—</span></div>
-        <div class="camp-row"><span class="camp-key">ROAS</span><span class="camp-val neu">—</span></div>
+        <div class="camp-row"><span class="camp-key">Spend</span><span class="camp-val">€220</span></div>
+        <div class="camp-row"><span class="camp-key">Clicks</span><span class="camp-val">935</span></div>
+        <div class="camp-row"><span class="camp-key">CPC</span><span class="camp-val">€0,23</span></div>
+        <div class="camp-row"><span class="camp-key">Conv.</span><span class="camp-val neu">~0</span></div>
+      </div>
+      <div class="camp-card star">
+        <div class="camp-name">VL Performance Max – Verkoop</div>
+        <div class="camp-row"><span class="camp-key">Spend</span><span class="camp-val">€104</span></div>
+        <div class="camp-row"><span class="camp-key">Clicks</span><span class="camp-val">937</span></div>
+        <div class="camp-row"><span class="camp-key">CPC</span><span class="camp-val">€0,11</span></div>
+        <div class="camp-row"><span class="camp-key">Conv. waarde</span><span class="camp-val up">€44</span></div>
       </div>
       <div class="camp-card">
         <div class="camp-name">NL – Shopping – Verkoop</div>
-        <div class="camp-row"><span class="camp-key">Spend</span><span class="camp-val">€101</span></div>
-        <div class="camp-row"><span class="camp-key">Clicks</span><span class="camp-val">387</span></div>
-        <div class="camp-row"><span class="camp-key">Conv. waarde</span><span class="camp-val neu">—</span></div>
-        <div class="camp-row"><span class="camp-key">ROAS</span><span class="camp-val neu">—</span></div>
+        <div class="camp-row"><span class="camp-key">Spend</span><span class="camp-val">€128</span></div>
+        <div class="camp-row"><span class="camp-key">Clicks</span><span class="camp-val">459</span></div>
+        <div class="camp-row"><span class="camp-key">CPC</span><span class="camp-val">€0,28</span></div>
+        <div class="camp-row"><span class="camp-key">Conv.</span><span class="camp-val neu">0</span></div>
       </div>
       <div class="camp-card">
-        <div class="camp-name">Performance Max – Verkoop</div>
-        <div class="camp-row"><span class="camp-key">Spend</span><span class="camp-val">€99</span></div>
-        <div class="camp-row"><span class="camp-key">Clicks</span><span class="camp-val">1.349</span></div>
-        <div class="camp-row"><span class="camp-key">Conv. waarde</span><span class="camp-val neu">—</span></div>
-        <div class="camp-row"><span class="camp-key">ROAS</span><span class="camp-val neu">—</span></div>
-      </div>
-      <div class="camp-card">
-        <div class="camp-name">VL – Shopping – Marstek V3</div>
-        <div class="camp-row"><span class="camp-key">Spend</span><span class="camp-val">€40</span></div>
-        <div class="camp-row"><span class="camp-key">Clicks</span><span class="camp-val">62</span></div>
-        <div class="camp-row"><span class="camp-key">Conv. waarde</span><span class="camp-val neu">—</span></div>
-        <div class="camp-row"><span class="camp-key">ROAS</span><span class="camp-val neu">—</span></div>
+        <div class="camp-name">NL – Performance Max – Verkoop</div>
+        <div class="camp-row"><span class="camp-key">Spend</span><span class="camp-val">€48</span></div>
+        <div class="camp-row"><span class="camp-key">Clicks</span><span class="camp-val">34</span></div>
+        <div class="camp-row"><span class="camp-key">Status</span><span class="camp-val neu">Learning</span></div>
+        <div class="camp-row"><span class="camp-key">Conv.</span><span class="camp-val neu">0</span></div>
       </div>
     </div>
+    <div class="alert alert-good">
+      ✓ VL Performance Max registreert voor het eerst conversiewaarde (€44) — eerste bevestiging dat de tracking-hersteloperatie van vorige week effect heeft.
+    </div>
     <div class="alert alert-warn">
-      ⚠ Google Ads registreert <strong>0 conversies</strong> deze week terwijl Shopify +85% omzetgroei toont. Mogelijke tracking gap — controleer de conversietag.
+      ⚠ NL Shopping spendt €128 bij 0 meetbare conversies. NL Performance Max staat in "Learning"-fase. Overweeg budget te herbalanceren richting VL Shopping dat historisch de sterkste ROAS haalt.
     </div>
   </div>
 
   <!-- META ADS -->
   <div class="section">
-    <div class="section-label">Meta Ads — Zat 7 mrt – vrij 13 mrt</div>
+    <div class="section-label">Meta Ads — Zat 14 mrt – vrij 20 mrt</div>
     <div class="section-title">Actieve advertenties</div>
-    <div class="section-sub">Totaal Meta spend: <strong>€38</strong>. Vergelijking met vorige week (28 feb – 6 mrt).</div>
-
+    <div class="section-sub">Totaal Meta spend: <strong>€26</strong>. Vergelijking met vorige week (7 mrt – 13 mrt: €38).</div>
     <div class="meta-row">
       <div class="meta-num">1</div>
-      <div class="meta-thumb" style="background:linear-gradient(135deg,#0ea5e9,#1d4ed8)">DE ZON<br>SCHIJNT</div>
+      <div class="meta-thumb" style="background:linear-gradient(135deg,#1d4ed8,#7c3aed)">GEO<br>POST</div>
       <div class="meta-label">
-        <div class="meta-label-main">Instagram: De zon schijnt...</div>
-        <div class="meta-label-sub">Link clicks</div>
+        <div class="meta-label-main">Post: Geopolitieke conflicten sturen energieprijzen...</div>
+        <div class="meta-label-sub">Link clicks · recent afgelopen</div>
       </div>
       <div class="meta-stats">
-        <div class="meta-sv"><div class="meta-sv-val">€11</div><div class="meta-sv-key">Spend</div></div>
-        <div class="meta-sv"><div class="meta-sv-val">49</div><div class="meta-sv-key">Clicks</div></div>
-        <div class="meta-sv"><div class="meta-sv-val" style="color:#22c55e">nieuw</div><div class="meta-sv-key">vs. vw</div></div>
+        <div class="meta-sv"><div class="meta-sv-val">€13</div><div class="meta-sv-key">Spend</div></div>
+        <div class="meta-sv"><div class="meta-sv-val">139</div><div class="meta-sv-key">Clicks</div></div>
+        <div class="meta-sv"><div class="meta-sv-val">€0,10</div><div class="meta-sv-key">CPC</div></div>
       </div>
     </div>
     <div class="meta-row">
       <div class="meta-num">2</div>
-      <div class="meta-thumb" style="background:linear-gradient(135deg,#7c3aed,#c026d3)">NL<br>PRODUCT</div>
+      <div class="meta-thumb" style="background:linear-gradient(135deg,#0ea5e9,#1d4ed8)">DE ZON<br>SCHIJNT</div>
       <div class="meta-label">
-        <div class="meta-label-main">Nederland Product</div>
-        <div class="meta-label-sub">Content views · 5 resultaten</div>
+        <div class="meta-label-main">Post: De zon schijnt. Je dak doet zijn werk. En toch…</div>
+        <div class="meta-label-sub">Actief · 2.290 weergaven · loopt t/m 22 mrt</div>
       </div>
       <div class="meta-stats">
-        <div class="meta-sv"><div class="meta-sv-val">€27</div><div class="meta-sv-key">Spend</div></div>
-        <div class="meta-sv"><div class="meta-sv-val">5</div><div class="meta-sv-key">Results</div></div>
-        <div class="meta-sv"><div class="meta-sv-val" style="color:#22c55e">+400%</div><div class="meta-sv-key">vs. vw</div></div>
+        <div class="meta-sv"><div class="meta-sv-val">€10</div><div class="meta-sv-key">Spend</div></div>
+        <div class="meta-sv"><div class="meta-sv-val">2.290</div><div class="meta-sv-key">Views</div></div>
+        <div class="meta-sv"><div class="meta-sv-val neu">loopt</div><div class="meta-sv-key">Status</div></div>
+      </div>
+    </div>
+    <div class="meta-row">
+      <div class="meta-num">3</div>
+      <div class="meta-thumb" style="background:linear-gradient(135deg,#7c3aed,#c026d3)">VEEL<br>MENSEN</div>
+      <div class="meta-label">
+        <div class="meta-label-main">Instagram: Veel mensen denken dat een grote...</div>
+        <div class="meta-label-sub">Profielbezoeken · actief t/m 26 mrt</div>
+      </div>
+      <div class="meta-stats">
+        <div class="meta-sv"><div class="meta-sv-val">€2</div><div class="meta-sv-key">Spend</div></div>
+        <div class="meta-sv"><div class="meta-sv-val">3</div><div class="meta-sv-key">Visits</div></div>
+        <div class="meta-sv"><div class="meta-sv-val down">-93%</div><div class="meta-sv-key">Bereik</div></div>
       </div>
     </div>
     <div class="alert alert-info">
-      ℹ De grotere Meta campagnes uit vorige week (Slim opslaan, Meer controle...) zijn niet meer actief. Meta spend daalde sterk. Controleer of dit intentioneel is.
+      ℹ Meta spend daalde van €38 naar €26 (-32%). De Geopolitieke post genereerde 139 link clicks aan €0,10/click — sterke relevantie voor een actueel thema. Met nieuw Plugsie-aanbod in het assortiment is dit een goed moment voor een nieuwe awareness-campagne.
     </div>
   </div>
 
   <!-- CONCLUSIES -->
   <div class="section">
-    <div class="section-label">Conclusies — Week 11</div>
+    <div class="section-label">Conclusies — Week 12</div>
     <div class="section-title">Terugblik & aandachtspunten</div>
 
     <div class="conclusion-section">
       <div class="conclusion-group-label green">✦ Wat hebben we goed gedaan</div>
-
-      <div class="conclusion-row">
-        <div class="conclusion-icon">📈</div>
-        <div class="conclusion-text"><strong>Sterke omzetgroei:</strong> 20 bestellingen en €20.606 omzet — respectievelijk +67% en +94% vs. vorige week. De vierde opeenvolgende week van groei. De trend zet door.</div>
-      </div>
       <div class="conclusion-row">
         <div class="conclusion-icon">💰</div>
-        <div class="conclusion-text"><strong>Hogere gemiddelde bestelwaarde:</strong> €1.037 vs. €887 vorige week (+17%). Klanten kopen meer per order, wat wijst op groeiend vertrouwen en mogelijk betere productpagina's of bundels.</div>
+        <div class="conclusion-text"><strong>Recordhoge gemiddelde bestelwaarde:</strong> €1.220 per bestelling — het hoogste ooit gemeten, +18% vs. vorige week (€1.030). Klanten investeren meer per aankoop, wat wijst op groeiend vertrouwen in het merk.</div>
       </div>
       <div class="conclusion-row">
         <div class="conclusion-icon">🔋</div>
-        <div class="conclusion-text"><strong>Productdiversificatie groeit:</strong> Naast de Marstek Venus E V2 zien we nu ook de V3, de 10,24kWh en beide Anker Solix varianten verschijnen. De catalogus begint te renderen.</div>
+        <div class="conclusion-text"><strong>Plugsie breekt door:</strong> De Plugsie Extension Battery en Plugsie Battery verschijnen voor het eerst in de verkoopcijfers. De productdiversificatie werpt haar vruchten af.</div>
       </div>
       <div class="conclusion-row">
-        <div class="conclusion-icon">⚡</div>
-        <div class="conclusion-text"><strong>105 kWh opslagcapaciteit verkocht in één week</strong> — goed voor 42 eenheden van 2,5 kWh. Een sterke indicator van marktpenetratie in het thuisbatterijsegment.</div>
+        <div class="conclusion-icon">📈</div>
+        <div class="conclusion-text"><strong>Marstek V3 wint terrein:</strong> 6 stuks verkocht vs. 3 stuks vorige week — een verdubbeling. De V3 begint de V2 geleidelijk te vervangen als meest verkocht model, positief voor de marge.</div>
+      </div>
+      <div class="conclusion-row">
+        <div class="conclusion-icon">✅</div>
+        <div class="conclusion-text"><strong>Google Ads tracking herstelt:</strong> VL Performance Max registreert voor het eerst €44 aan conversiewaarde — een eerste bevestiging dat de hersteloperatie van vorige week aanslaat.</div>
       </div>
     </div>
 
     <div class="conclusion-section">
       <div class="conclusion-group-label orange">▲ Wat kan beter</div>
-
       <div class="conclusion-row">
-        <div class="conclusion-icon">↩️</div>
-        <div class="conclusion-text"><strong>Retourpercentage Marstek V2 is hoog:</strong> 2 van 12 verkopen (17%) werden geretourneerd. Ook de 10,24kWh had 1 retour op 2 verkopen (50%). Het is de moeite om na te gaan of dit installatieproblemen, verwachtingskloof of logistieke issues zijn.</div>
-      </div>
-      <div class="conclusion-row">
-        <div class="conclusion-icon">📣</div>
-        <div class="conclusion-text"><strong>Meta spend fors gedaald:</strong> Van de grotere campagnes uit vorige week (Slim opslaan, Meer controle...) is deze week niets meer actief. Met €38 totaal spend en beperkte bereikdata laten we mogelijk omzet liggen in een groeiende week.</div>
+        <div class="conclusion-icon">📉</div>
+        <div class="conclusion-text"><strong>Terugval in volume na recordweek:</strong> 15 bestellingen vs. 20 vorige week (-25%), €18.293 vs. €20.606 omzet (-11%). Deels normaal na een uitschietersweek, maar het volume verdient opvolging de komende weken.</div>
       </div>
       <div class="conclusion-row">
         <div class="conclusion-icon">🇳🇱</div>
-        <div class="conclusion-text"><strong>Nederland blijft onderbenut:</strong> De NL Shopping-campagne spendt €101 maar registreert geen conversies. De NL Meta-campagne heeft slechts 5 content views voor €27 spend. De NL-markt verdient een gerichtere aanpak.</div>
+        <div class="conclusion-text"><strong>Nederland blijft ondermaats:</strong> NL Shopping spendt €128 bij 0 meetbare conversies. NL Performance Max staat nog in "Learning"-fase. Overweeg of het NL-budget beter ingezet kan worden of of de NL-landingspagina optimalisatie nodig heeft.</div>
+      </div>
+      <div class="conclusion-row">
+        <div class="conclusion-icon">📣</div>
+        <div class="conclusion-text"><strong>Meta bereik daalt sterk:</strong> De Instagram-advertentie verloor 93% bereik. Met het nieuwe Plugsie-aanbod is dit een goed moment om een frisse awareness-campagne op te zetten gericht op het bredere assortiment.</div>
       </div>
     </div>
 
     <div class="conclusion-section">
       <div class="conclusion-group-label red">⚠ Aandachtspunten</div>
-
       <div class="conclusion-row">
-        <div class="conclusion-icon">🔴</div>
-        <div class="conclusion-text"><strong>Google Ads conversietracking werkt niet:</strong> €391 spend, 2.629 clicks, maar 0 geregistreerde conversies — terwijl Shopify een recordweek toont. Dit maakt ROAS-berekening onmogelijk en budgetoptimalisatie blind. Prioriteit: conversietag controleren en herstellen.</div>
-      </div>
-      <div class="conclusion-row">
-        <div class="conclusion-icon">🔴</div>
-        <div class="conclusion-text"><strong>Shopify–Looker Studio connector verbroken:</strong> Wekelijkse rapportage vereist momenteel manuele CSV-exports. Een structurele oplossing (Shopify Flow → Google Sheets → Looker Studio) bespaart tijd en vermijdt fouten.</div>
+        <div class="conclusion-icon">🟡</div>
+        <div class="conclusion-text"><strong>kWh-volume daalt mee:</strong> 93,3 kWh verkocht vs. 105,4 kWh vorige week (-11%). In lijn met de orderterugval maar verdient opvolging: tijdelijke correctie of trendbreuk?</div>
       </div>
       <div class="conclusion-row">
         <div class="conclusion-icon">🟡</div>
-        <div class="conclusion-text"><strong>Performance Max levert onvoldoende meetbare resultaten:</strong> €99 spend, 1.349 clicks maar geen getrackte conversies. Overweeg te pauzeren of budget te verschuiven naar VL Shopping dat historisch een ROAS van 8,6× haalt.</div>
+        <div class="conclusion-text"><strong>Google Ads spend stijgt, resultaten nog beperkt:</strong> €499 spend (+28%) met slechts €44 gemeten conversiewaarde. Naarmate de Littledata-tracking verder stabiliseert zullen de campagnes meer data hebben om op te optimaliseren — geef het nog 1-2 weken.</div>
       </div>
     </div>
   </div>
 
   <div class="divider"></div>
   <div class="footer">
-    <p><strong>De Plugin Gazette</strong> · Vrijdag 13 maart 2026 · 16:30<br>
+    <p><strong>De Plugin Gazette</strong> · Vrijdag 20 maart 2026 · 16:30<br>
     Data: Shopify Analytics · Google Ads · Meta Ads Manager</p>
   </div>
 </div>
